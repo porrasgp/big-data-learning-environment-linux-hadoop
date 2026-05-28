@@ -1,0 +1,171 @@
+    1  clear
+    2  ls
+    3  cd hdoop
+    4  ls
+    5  start-dfs.sh; start-yarn.sh
+    6  jps
+    7  hadoop fs -mkdir /tmp
+    8  hadoop fs -chmod g+w /tmp
+    9  hadoop fs -mkdir -p /user/
+   10  hadoop fs -mkdir -p /user/hive
+   11  hadoop fs -mkdir -p /user/hive/warehouse
+   12  schematool -initSchema -dbType derby
+   13  hive
+   14  jps
+   15  hive
+   16  stop-dfs.sh; stop-yarn.sh
+   17  start-dfs.sh; start-yarn.sh
+   18  jps
+   19  nano ~/.bashrc
+   20  nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+   21  nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+   22  clear
+   23  jps
+   24  netstat -tulnp | grep 9000
+   25  ss -tulnp | grep 9000
+   26  ls
+   27  nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+   28  nano $HADOOP_HOME/etc/hadoop/core-site.xml
+   29  hdfs dfs -ls /
+   30  jps
+   31  start-dfs.sh
+   32  stop-dfs.sh; stop-yarn.sh
+   33  start-dfs.sh; start-yarn.sh
+   34  jps
+   35  nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
+   36  nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
+   37  stop-dfs.sh; stop-yarn.sh
+   38  start-dfs.sh; start-yarn.sh
+   39  hive
+   40  stop-dfs.sh; stop-yarn.sh
+   41  hdfs namenode -format
+   42  jps
+   43  start-dfs.sh; start-yarn.sh
+   44  jps
+   45  hive
+   46  ls
+   47  cd 
+   48  ls
+   49  clear
+   50  start-dfs.sh; start-yarn.sh
+   51  hdfs dfs -mkdir -p /user/hdoop/hospital/input
+   52  hdfs dfs -mkdir -p /user/hdoop/hospital/output
+   53  jps
+   54  hdfs namenode -format
+   55  jps
+   56  stop-dfs.sh; stop-yarn.sh
+   57  start-dfs.sh; start-yarn.sh
+   58  hdfs dfs -mkdir -p /user/hdoop/hospital/input
+   59  hdfs dfs -mkdir -p /user/hdoop/hospital/output
+   60  hdfs ls 
+   61  clear
+   62  ls
+   63  sudo cp -r /home/datalab/Desktop/big-data-learning-environment-linux-hadoop /home/hdoop/
+   64  ls
+   65  cd big-data-learning-environment-linux-hadoop
+   66  ls
+   67  jps
+   68  source GHG_ProtocolCO2/bin/activate
+   69  ls
+   70  cd projects
+   71  ls
+   72  cd Prediccion-Estancia-Hospitalaria-LOS-Python
+   73  ls
+   74  python3 xlsx_to_hdfs_pipeline.py
+   75  pip install pandas subprocess pyspark
+   76  python3 pip install pandas subprocess pyspark
+   77  python3 -m pip install pandas pyspark openpyxl
+   78  py -m pip install pandas pyspark openpyxl
+   79  sudo apt update
+   80  sudo apt install python3-venv -y
+   81  clear
+   82  python3
+   83  python3 -m pip install --break-system-packages pandas pyspark openpyxl
+   84  python3 xlsx_to_hdfs_pipeline.py
+   85  nano xlsx_to_hdfs_pipeline.py
+   86  clear
+   87  nano xlsx_to_hdfs_pipeline.py
+   88  nano xlsx_to_hdfs_pipeline.pysudo chown -R hdoop:hdoop ./Prediccion-Estancia-Hospitalaria-LOS-Python
+   89  python3 xlsx_to_hdfs_pipeline.py
+   90  nano xlsx_to_hdfs_pipeline.py
+   91  sudo chown -R hdoop:hdoop /home/datalab/Desktop/big-data-learning-environment-linux-hadoop
+   92  ls
+   93  cd ..
+   94  ls
+   95  cd
+   96  ls
+   97  cd big-data-learning-environment-linux-hadoop
+   98  cd projects
+   99  cd big-data-learning-environment-linux-hadoop
+  100  ls
+  101  cd Prediccion-Estancia-Hospitalaria-LOS-Python
+  102  ls
+  103  chmod 777 xlsx_to_hdfs_pipeline.py
+  104  chmod 755 xlsx_to_hdfs_pipeline.py
+  105  pwd
+  106  clear
+  107  ls
+  108  python3 xlsx_to_hdfs_pipeline.py
+  109  hdfs dfs -ls /user/hdoop/hospital/input
+  110  ls
+  111  nano App.py
+  112  python3 App.py
+  113  nano App.py
+  114  python3 App.py
+  115  nano App.py
+  116  python3 App.py
+  117  nano App.py
+  118  python3 App.py
+  119  jps
+  120  stop-dfs.sh; stop-yarn.sh
+  121  hdfs namenode -format
+  122  start-dfs.sh; start-yarn.sh
+  123  hdfs dfs -ls /user/hdoop/hospital/input
+  124  hdfs dfs -mkdir -p /user/hdoop/hospital/input
+  125  hdfs dfs -mkdir -p /user/hdoop/hospital/output
+  126  python3 xlsx_to_hdfs_pipeline.py
+  127  python3 App.py
+  128  hdfs dfs -ls /user/hdoop/hospital/input
+  129  nano App.py
+  130  hdfs dfs -ls /user/hdoop/hospital/input
+  131  jps
+  132  hdfs dfs -ls /user/hdoop/hospital/input
+  133  hdfs dfs -ls /user/hdoop/
+  134  hdfs dfs -ls /user/hdoop/hospital
+  135  hdfs dfs -ls /user/hdoop/hospital/input
+  136  ls
+  137  python3 xlsx_to_hdfs_pipeline.py
+  138  hdfs dfs -ls /user/hdoop/hospital/input
+  139  stop-dfs.sh; stop-yarn.sh
+  140  hdfs dfs -mkdir -p /user/hdoop/hospital/output
+  141  start-dfs.sh; start-yarn.sh
+  142  hdfs dfs -ls /user/hdoop/hospital/input
+  143  python3 xlsx_to_hdfs_pipeline.py
+  144  hdfs dfs -ls /user/hdoop/hospital/input
+  145  cd ~/hadoop-*/logs
+  146  ls
+  147  cd
+  148  hdfs dfs -ls /
+  149  hdfs dfs -put hospital_covid_data_raw.csv /user/hdoop/hospital/input/
+  150  ls
+  151  cd big-data-learning-environment-linux-hadoop
+  152  ls
+  153  cd projects
+  154  ls
+  155  cd Prediccion-Estancia-Hospitalaria-LOS-Python
+  156  ls
+  157  cd Data
+  158  ls
+  159  clear
+  160  ls
+  161  hdfs dfs -put ./hospital_covid_data_raw.csv /user/hdoop/hospital/input/
+  162  stop-dfs.sh
+  163  start-dfs.sh
+  164  jps
+  165  hadoop fs -ls hdfs://localhost:9000/
+  166  python3 xlsx_to_hdfs_pipeline.py
+  167  cd ..
+  168  ls
+  169  python3 xlsx_to_hdfs_pipeline.py
+  170  history
+
