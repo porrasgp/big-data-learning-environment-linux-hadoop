@@ -14,31 +14,6 @@ Este proyecto implementa un **pipeline completo de Big Data y Machine Learning**
 
 El objetivo es demostrar cómo construir un flujo de trabajo distribuido capaz de procesar grandes volúmenes de datos, entrenar modelos de Machine Learning y almacenar tanto los resultados como el modelo entrenado dentro de Hadoop.
 
-Este proyecto está pensado como material educativo para estudiantes y profesionales interesados en:
-
-- 🐧 Linux
-- 🐘 Apache Hadoop
-- ⚡ Apache Spark
-- 🤖 Machine Learning
-- 🏥 Analítica en Salud
-- 📊 Ingeniería de Datos
-
----
-
-# 🎯 Objetivo
-
-Predecir la cantidad de días que permanecerá hospitalizado un paciente utilizando información clínica y demográfica.
-
-Una predicción precisa permite:
-
-- 🏥 Optimizar la asignación de camas.
-- 💰 Reducir costos hospitalarios.
-- 👨‍⚕️ Mejorar la planificación del personal médico.
-- 📈 Optimizar el uso de recursos hospitalarios.
-- ❤️ Mejorar la atención al paciente.
-
-
-
 ---
 
 # 📂 Estructura del Proyecto
