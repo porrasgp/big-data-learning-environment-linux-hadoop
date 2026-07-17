@@ -50,7 +50,3 @@ Además incluye:
 setup/        -> Instalaciones y configuraciones
 docs/         -> Manuales y documentación
 projects/     -> Proyectos independientes
-datasets/     -> Datos de prueba y ejemplos
-notebooks/    -> Jupyter notebooks
-scripts/      -> Scripts auxiliares
-docker/       -> Contenedores y despliegues
