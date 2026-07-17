@@ -37,39 +37,7 @@ Una predicción precisa permite:
 - 📈 Optimizar el uso de recursos hospitalarios.
 - ❤️ Mejorar la atención al paciente.
 
----
 
-# 🏗 Arquitectura del Proyecto
-
-```mermaid
-flowchart LR
-
-A[Archivos Excel] --> B[Pandas]
-
-B --> C[Conversión a CSV]
-
-C --> D[HDFS]
-
-D --> E[Apache Spark]
-
-E --> F[Limpieza de Datos]
-
-F --> G[Ingeniería de Características]
-
-G --> H[StringIndexer]
-
-H --> I[VectorAssembler]
-
-I --> J[StandardScaler]
-
-J --> K[Random Forest]
-
-K --> L[Predicciones]
-
-L --> M[Evaluación]
-
-M --> N[Guardar Modelo]
-```
 
 ---
 
@@ -426,39 +394,4 @@ I --> J
 
 ---
 
-# 🎓 ¿Qué aprenderás con este proyecto?
 
-Al desarrollar este laboratorio comprenderás cómo funciona un pipeline completo de Big Data:
-
-- ✅ Ingesta de datos hacia Hadoop.
-- ✅ Procesamiento distribuido con Spark.
-- ✅ Limpieza de datos.
-- ✅ Ingeniería de características.
-- ✅ Modelos de Machine Learning distribuidos.
-- ✅ Evaluación de modelos.
-- ✅ Almacenamiento de resultados en HDFS.
-- ✅ Persistencia de modelos para producción.
-
----
-
-# 🚀 Posibles Mejoras
-
-- Implementar Cross Validation.
-- Optimización de hiperparámetros.
-- Integración con MLflow.
-- Implementar XGBoost.
-- Despliegue utilizando Docker.
-- Automatización mediante Apache Airflow.
-- Procesamiento en tiempo real con Spark Streaming.
-
----
-
-# 👨‍💻 Autor
-
-**Giovanni Solano Porras**
-
-🎓 Bachiller en Ingeniería en Ciencia de Datos
-
-Especialista en Big Data, Machine Learning, Ingeniería de Datos y Computación en la Nube.
-
-⭐ Si este proyecto te resulta útil, considera darle una **estrella al repositorio** y compartirlo con otros estudiantes interesados en Big Data.
