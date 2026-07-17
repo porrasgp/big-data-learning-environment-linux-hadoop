@@ -4,3 +4,5 @@ Esta guía de instalación proporciona un recorrido paso a paso para configurar 
 
 A lo largo de esta guía aprenderás a instalar y configurar cada componente del ecosistema, preparar un entorno distribuido y verificar que todo esté listo para desarrollar proyectos de Big Data, Ingeniería de Datos y Machine Learning.
 
+
+Utiliza el documento "Manual Completo de Instalación de VirtualBox, Hadoop, Hive, Spark.pdf" para configurar una Virtual Machine e Instalar Linux.
