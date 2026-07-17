@@ -1,155 +1,268 @@
+# 🚀 Configuración de Hadoop en Linux
+
+> [!NOTE]
+> Esta guía explica cómo utilizar los archivos del directorio `setup/`
+> para configurar un entorno Hadoop completamente funcional.
+
 ---
-title: "Guía de Configuración de Hadoop en Linux"
-author: "Giovanni Solano Porras"
-date: "`r Sys.Date()`"
-output: html_document
+
+# 📚 Tabla de Contenido
+
+- 🎯 Objetivo
+- 📁 Estructura del proyecto
+- 📦 Archivos de configuración
+- ⚙️ Paso 1 — Configurar `.bashrc`
+- 🖥️ Paso 2 — Configurar Hadoop
+- 🔍 Verificación
+- ❗ Solución de problemas
+
 ---
 
-# Introducción
+# 🎯 Objetivo
 
-Esta guía explica cómo agregar los archivos de configuración de Hadoop en Linux utilizando los archivos disponibles en el repositorio de GitHub.
+Después de completar esta guía tendrás instalado:
 
-Repositorio utilizado:
+| Software | Estado |
+|----------|---------|
+| ☕ Java 11 | ✅ |
+| 🐘 Hadoop | ✅ |
+| 🐝 Hive | ✅ |
+| ⚡ Spark | ✅ |
+
+---
+
+# 📁 Directorio setup
 
 ```
-https://github.com/porrasgp/big-data-learning-environment-linux-hadoop
+setup/
+│
+├── bashrc.txt
+├── core-site.txt
+├── hdfs-site.txt
+├── mapred-site.txt
+├── yarn-site.txt
+└── README.md
 ```
 
-# Requisitos previos
+Cada archivo contiene la configuración necesaria para un componente de Hadoop.
 
-- Ubuntu instalado
-- Java 11 instalado
-- Hadoop 3.4.1 descargado
-- Usuario `hdoop` configurado
-- SSH funcionando sin contraseña
+---
 
-# Configuración de variables de entorno (.bashrc)
+# ⚙️ Paso 1 — Configurar .bashrc
 
-Abrir el archivo:
+## 📍 Archivo
+
+```
+~/.bashrc
+```
+
+Abre el archivo
 
 ```bash
 nano ~/.bashrc
 ```
 
-Agregar el contenido del archivo del repositorio:
+Ve hasta el final del documento.
+
+> [!IMPORTANT]
+> **NO elimines el contenido existente.**
+>
+> Únicamente agrega el contenido de:
 
 ```
-https://github.com/porrasgp/big-data-learning-environment-linux-hadoop/blob/main/setup/bashrc.txt
+setup/bashrc.txt
 ```
 
-Aplicar los cambios:
+o directamente
+
+```bash
+cat setup/bashrc.txt >> ~/.bashrc
+```
+
+Guarda
+
+```
+CTRL + X
+Y
+ENTER
+```
+
+Ahora aplica los cambios
 
 ```bash
 source ~/.bashrc
 ```
 
-# Configuración de core-site.xml
+---
 
-Editar el archivo:
+# ⚙️ Paso 2 — Configurar core-site.xml
+
+## Archivo
+
+```
+$HADOOP_HOME/etc/hadoop/core-site.xml
+```
+
+Abrir
 
 ```bash
 nano $HADOOP_HOME/etc/hadoop/core-site.xml
 ```
 
-Copiar el contenido desde:
+Copiar completamente el contenido de
 
 ```
-https://github.com/porrasgp/big-data-learning-environment-linux-hadoop/blob/main/setup/core-site.txt
+setup/core-site.txt
 ```
 
-Guardar con:
+Guardar
 
 ```
-Ctrl + X → Y → Enter
+CTRL + X
+Y
+ENTER
 ```
 
-# Configuración de hdfs-site.xml
+---
 
-Editar:
+# 🧩 Paso 3 — hdfs-site.xml
+
+📄 Archivo destino
+
+```
+$HADOOP_HOME/etc/hadoop/hdfs-site.xml
+```
+
+📄 Copiar desde
+
+```
+setup/hdfs-site.txt
+```
+
+---
+
+# 🧩 Paso 4 — mapred-site.xml
+
+Destino
+
+```
+$HADOOP_HOME/etc/hadoop/mapred-site.xml
+```
+
+Copiar
+
+```
+setup/mapred-site.txt
+```
+
+---
+
+# 🧩 Paso 5 — yarn-site.xml
+
+Destino
+
+```
+$HADOOP_HOME/etc/hadoop/yarn-site.xml
+```
+
+Copiar
+
+```
+setup/yarn-site.txt
+```
+
+---
+
+# 🔍 Verificar la instalación
+
+Ejecuta
 
 ```bash
-nano $HADOOP_HOME/etc/hadoop/hdfs-site.xml
+echo $JAVA_HOME
+
+echo $HADOOP_HOME
+
+echo $PATH
 ```
 
-Copiar desde:
-
-```
-https://github.com/porrasgp/big-data-learning-environment-linux-hadoop/blob/main/setup/hdfs-site.txt
-```
-
-# Configuración de mapred-site.xml
-
-Editar:
-
-```bash
-nano $HADOOP_HOME/etc/hadoop/mapred-site.xml
-```
-
-Copiar desde:
-
-```
-https://github.com/porrasgp/big-data-learning-environment-linux-hadoop/blob/main/setup/mapred-site.txt
-```
-
-# Configuración de yarn-site.xml
-
-Editar:
-
-```bash
-nano $HADOOP_HOME/etc/hadoop/yarn-site.xml
-```
-
-Copiar desde:
-
-```
-https://github.com/porrasgp/big-data-learning-environment-linux-hadoop/blob/main/setup/yarn-site.txt
-```
-
-# Configuración de JAVA_HOME en Hadoop
-
-Editar:
-
-```bash
-nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
-```
-
-Verificar que exista:
-
-```bash
-export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
-```
-
-# Formatear el NameNode
+Si todo está correcto continúa con
 
 ```bash
 hdfs namenode -format
 ```
 
-# Iniciar Hadoop
+Después
 
 ```bash
 start-dfs.sh
+
 start-yarn.sh
 ```
 
-# Verificar procesos
+Verifica
 
 ```bash
 jps
 ```
 
-Deberían aparecer procesos como:
+Deberías obtener algo similar
 
-- NameNode
-- DataNode
-- ResourceManager
-- NodeManager
+```
+NameNode
+DataNode
+SecondaryNameNode
+NodeManager
+ResourceManager
+Jps
+```
 
-# Verificación Web
+---
 
-- HDFS: http://localhost:9870
-- YARN: http://localhost:8088
+# 🌐 Interfaces Web
 
-# Conclusión
+| Servicio | URL |
+|----------|------|
+| 🗄️ HDFS | http://localhost:9870 |
+| ⚙️ YARN | http://localhost:8088 |
 
-Con esta guía se pueden agregar rápidamente todos los archivos de configuración necesarios utilizando los archivos del directorio `setup/` del repositorio GitHub.
+---
+
+# 📌 Resumen
+
+| Archivo | Destino |
+|----------|----------|
+| bashrc.txt | ~/.bashrc |
+| core-site.txt | core-site.xml |
+| hdfs-site.txt | hdfs-site.xml |
+| mapred-site.txt | mapred-site.xml |
+| yarn-site.txt | yarn-site.xml |
+
+---
+
+# 💡 Consejos
+
+> [!TIP]
+> Haz una copia de respaldo antes de modificar cualquier archivo.
+
+```bash
+cp ~/.bashrc ~/.bashrc.bak
+```
+
+---
+
+# 🚨 Problemas comunes
+
+> [!WARNING]
+> Si Hadoop no inicia:
+
+- Verifica JAVA_HOME
+- Ejecuta `jps`
+- Revisa `$HADOOP_HOME/logs`
+
+---
+
+# 🎉 ¡Listo!
+
+Si llegaste hasta aquí ya tienes configurado el entorno básico de Hadoop y puedes continuar con Hive y Spark.
+
+Happy Big Data! 🚀
